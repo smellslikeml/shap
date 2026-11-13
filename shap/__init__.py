@@ -5,6 +5,7 @@ from ._explanation import Cohorts, Explanation
 # explainers
 from .explainers import other
 from .explainers._additive import AdditiveExplainer
+from .explainers._banzhaf import BanzhafExplainer
 from .explainers._coalition import CoalitionExplainer
 from .explainers._deep import DeepExplainer
 from .explainers._exact import ExactExplainer
@@ -106,6 +107,7 @@ __all__ = [
     # Explainers
     "other",
     "AdditiveExplainer",
+    "BanzhafExplainer",
     "DeepExplainer",
     "ExactExplainer",
     "Explainer",

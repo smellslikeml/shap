@@ -42,6 +42,17 @@ def shapley_coefficients(n: int) -> npt.NDArray[Any]:
     return out
 
 
+def banzhaf_coefficients(n: int) -> npt.NDArray[Any]:
+    """Coalition weights for the Banzhaf value of a game with n players.
+
+    While the Shapley value weights a marginal contribution over a coalition of
+    size ``s`` by ``1 / (n * comb(n - 1, s))``, the Banzhaf value weights every
+    marginal contribution uniformly by ``1 / 2**(n - 1)`` (there are exactly
+    ``2**(n - 1)`` coalitions a player could join).
+    """
+    return np.full(n, 1 / 2 ** (n - 1), dtype=np.float64)
+
+
 def convert_name(
     ind: str | int | None,
     shap_values: npt.NDArray[Any] | None,

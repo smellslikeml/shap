@@ -1,6 +1,7 @@
 from importlib.metadata import entry_points
 
 from ._additive import AdditiveExplainer
+from ._banzhaf import BanzhafExplainer
 from ._coalition import CoalitionExplainer
 from ._deep import DeepExplainer
 from ._exact import ExactExplainer
@@ -31,6 +32,7 @@ def __getattr__(name: str):
 
 # Alternative legacy "short-form" aliases, which are kept here for backwards-compatibility
 Additive = AdditiveExplainer
+Banzhaf = BanzhafExplainer
 Deep = DeepExplainer
 Exact = ExactExplainer
 Gradient = GradientExplainer
@@ -44,6 +46,7 @@ Tree = TreeExplainer
 
 __all__ = [
     "AdditiveExplainer",
+    "BanzhafExplainer",
     "DeepExplainer",
     "ExactExplainer",
     "GPUTreeExplainer",
